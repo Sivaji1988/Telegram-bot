@@ -58,7 +58,7 @@ async function sendMessage(text) {
 }
 
 // 3. Schedule message daily at 2:01 PM IST
-cron.schedule('29 21 * * *', async () => {
+cron.schedule('0 * * * *', async () => {
       const message = await generateMessage();
   const timestamp = DateTime.now().setZone("Asia/Kolkata").toLocaleString(DateTime.TIME_WITH_SECONDS);
   const fullMessage = `🕒 ${timestamp}\n\n${message}`;

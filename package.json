@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node bot.js\" \"node spam.js\" \"node group-bot.js\""
-  },
+  "start": "node final-telegram-bot.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

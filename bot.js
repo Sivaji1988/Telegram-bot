@@ -42,22 +42,27 @@ async function sendMessage(text) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         chat_id: process.env.CHAT_ID,
-        text: text
-      })
+        text: text,
+      }),
     });
 
     const data = await res.json();
+
+    // Print full response
+    console.log("📦 Telegram API response:", data);
+
     if (data.ok) {
-      console.log('✅ Message sent successfully');
+      console.log("✅ Message sent successfully");
     } else {
-      console.error('❌ Failed to send message:', data.description);
+      console.error("❌ Telegram API Error:", data.description);
     }
   } catch (err) {
-    console.error('❌ Telegram send error:', err.message);
+    console.error("❌ Telegram send error:", err.message);
   }
 }
 
-// 3. Schedule message daily at 2:01 PM IST
+
+
 cron.schedule('0 * * * *', async () => {
       const message = await generateMessage();
   const timestamp = DateTime.now().setZone("Asia/Kolkata").toLocaleString(DateTime.TIME_WITH_SECONDS);

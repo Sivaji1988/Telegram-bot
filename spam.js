@@ -6,7 +6,7 @@ const listenerBot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 // Define spam patterns or keywords
 const spamKeywords = [
-  "bit.ly", "join group", "free offer", "discount", "http", "https", "limited time", "buy now"
+  "bit.ly", "join group", "free offer", "100%", "discount", "http", "https", "limited time", "buy now"
 ];
 
 // Listen for all messages

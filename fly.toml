@@ -1,4 +1,4 @@
-app = "telegram-bot" # you can change this to match your app name
+app = "telegram-bot1988" # you can change this to match your app name
 
 [build]
   image = "node:18"

@@ -1,0 +1,21 @@
+app = "telegram-bot" # you can change this to match your app name
+
+[build]
+  image = "node:18"
+
+[env]
+  NODE_ENV = "production"
+
+[processes]
+  app = "node final-telegram-bot.js"
+
+[experimental]
+  auto_rollback = true
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = []
+    port = 8080
